@@ -6,14 +6,14 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Zara AI</h3>
+            <h3>Myra AI</h3>
             <p>Your intelligent AI companion for conversations, creativity, and productivity. Experience the future of artificial intelligence with natural, intuitive interactions that understand and adapt to your needs.</p>
             <div className="social-links">
-              <a href="https://twitter.com/zaraai" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
-              <a href="https://facebook.com/zaraai" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>
-              <a href="https://linkedin.com/company/zaraai" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
-              <a href="https://instagram.com/zaraai" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
-              <a href="https://github.com/zaraai" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
+              <a href="https://twitter.com/myraai" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+              <a href="https://facebook.com/myraai" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>
+              <a href="https://linkedin.com/company/myraai" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
+              <a href="https://instagram.com/myraai" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+              <a href="https://github.com/myraai" className="social-link" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
             </div>
           </div>
           <div className="footer-section"></div>
@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2025 Zara AI. All rights reserved. Built with ❤️ for the future of AI interaction.</p>
+          <p>&copy; 2025 Myra AI. All rights reserved. Built with ❤️ for the future of AI interaction.</p>
         </div>
       </div>
     </footer>

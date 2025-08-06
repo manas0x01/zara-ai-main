@@ -81,8 +81,8 @@ const Hero = () => {
       <canvas ref={canvasRef} id="three-canvas"></canvas>
       <div className="container">
         <div className="hero-content">
-          <h1>Meet Zara AI</h1>
-          <p>Experience the future of AI conversation. Zara AI combines natural language understanding, advanced image analysis, and creative intelligence to become your perfect digital companion - completely free to use.</p>
+          <h1>Meet Myra AI</h1>
+          <p>Experience the future of AI conversation. Myra AI combines natural language understanding, advanced image analysis, and creative intelligence to become your perfect digital companion - completely free to use.</p>
           <div className="hero-buttons">
             <a href="#demo" className="cta-button">Try Demo</a>
             <a href="#features" className="secondary-button">Explore Features</a>

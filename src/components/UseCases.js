@@ -5,7 +5,7 @@ const UseCases = () => {
     <section className="use-cases scroll-reveal" id="use-cases">
       <div className="container">
         <h2 className="section-title">Endless Possibilities</h2>
-        <p className="section-subtitle">Discover how Zara AI can transform your daily tasks and unlock new creative potential</p>
+        <p className="section-subtitle">Discover how Myra AI can transform your daily tasks and unlock new creative potential</p>
         <div className="use-cases-grid">
           <div className="use-case-card">
             <span className="use-case-icon">📚</span>

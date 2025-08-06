@@ -145,7 +145,7 @@ function App() {
             
             // Simple email validation
             if (email && email.includes('@')) {
-                alert('Thank you for subscribing! You\'ll receive updates about Zara AI.');
+                alert('Thank you for subscribing! You\'ll receive updates about Myra AI.');
                 newsletterForm.querySelector('.newsletter-input').value = '';
             } else {
                 alert('Please enter a valid email address.');

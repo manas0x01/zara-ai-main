@@ -5,11 +5,11 @@ const Testimonials = () => {
     <section className="testimonials scroll-reveal" id="testimonials">
       <div className="container">
         <h2 className="section-title">What Users Are Saying</h2>
-        <p className="section-subtitle">Join millions of satisfied users who have transformed their daily workflows with Zara AI</p>
+        <p className="section-subtitle">Join millions of satisfied users who have transformed their daily workflows with Myra AI</p>
         <div className="testimonials-grid">
           <div className="testimonial-card">
             <div className="testimonial-text">
-              Zara AI has completely transformed how I approach my research projects. The ability to analyze complex documents and get intelligent insights in seconds is incredible. It's like having a research assistant available 24/7.
+              Myra AI has completely transformed how I approach my research projects. The ability to analyze complex documents and get intelligent insights in seconds is incredible. It's like having a research assistant available 24/7.
             </div>
             <div className="testimonial-author">
               <div className="author-avatar">DR</div>
@@ -21,7 +21,7 @@ const Testimonials = () => {
           </div>
           <div className="testimonial-card">
             <div className="testimonial-text">
-              I use Zara AI for everything from debugging code to explaining complex algorithms to my team. It's incredibly accurate and saves me hours of research time every week. Absolutely indispensable for developers.
+              I use Myra AI for everything from debugging code to explaining complex algorithms to my team. It's incredibly accurate and saves me hours of research time every week. Absolutely indispensable for developers.
             </div>
             <div className="testimonial-author">
               <div className="author-avatar">JS</div>

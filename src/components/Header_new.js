@@ -58,7 +58,7 @@ const Header = () => {
     <>
       <nav className={mobileMenuOpen ? 'mobile-menu-open' : ''}>
         <div className="nav-content">
-          <div className="logo" onClick={() => scrollToSection('home')}>Zara AI</div>
+          <div className="logo" onClick={() => scrollToSection('home')}>Myra AI</div>
           
           {/* Desktop Navigation */}
           <ul className="nav-links desktop-only">

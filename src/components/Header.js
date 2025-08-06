@@ -131,7 +131,7 @@ const Header = () => {
       >
         <div className="nav-content">
           <div className="logo" onClick={() => scrollToSection('home')}>
-            <span className="logo-text">Zara</span>
+            <span className="logo-text">Myra</span>
             <span className="logo-accent">AI</span>
           </div>
           

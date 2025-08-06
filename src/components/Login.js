@@ -52,7 +52,7 @@ const Login = ({ onSwitchToSignup, onClose, onSuccess }) => {
     <div className="auth-form">
       <div className="auth-header">
         <h2>Welcome Back</h2>
-        <p>Sign in to your Zara AI account</p>
+        <p>Sign in to your Myra AI account</p>
       </div>
 
       <form onSubmit={handleSubmit} className="auth-form-content">

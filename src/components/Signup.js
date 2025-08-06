@@ -127,7 +127,7 @@ const Signup = ({ onSwitchToLogin, onClose, onSuccess }) => {
     <div className="auth-form signup-form">
       <div className="auth-header">
         <h2>Create Your Account</h2>
-        <p>Join Zara AI and unlock the power of intelligent assistance</p>
+        <p>Join Myra AI and unlock the power of intelligent assistance</p>
       </div>
 
       <form onSubmit={handleSubmit} className="auth-form-content">
