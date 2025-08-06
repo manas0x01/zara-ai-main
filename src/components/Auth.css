@@ -1,13 +1,13 @@
-/* Authentication Modal Styles - Professional World-Class Design */
+/* Authentication Modal Styles - World-Class Professional White Theme */
 .auth-modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(15, 15, 15, 0.8);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.4);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,31 +17,31 @@
 
 .auth-modal {
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 24px;
   box-shadow: 
-    0 32px 64px rgba(15, 15, 15, 0.15),
-    0 16px 32px rgba(15, 15, 15, 0.1),
-    0 0 0 1px rgba(15, 15, 15, 0.05);
+    0 32px 64px rgba(15, 23, 42, 0.08),
+    0 16px 32px rgba(15, 23, 42, 0.06),
+    0 0 0 1px rgba(15, 23, 42, 0.04);
   width: 90%;
-  max-width: 440px;
+  max-width: 480px;
   max-height: 90vh;
   overflow: hidden;
   position: relative;
   animation: slideInScale 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
 .auth-modal-close {
   position: absolute;
   top: 24px;
   right: 24px;
-  background: rgba(15, 15, 15, 0.05);
+  background: rgba(15, 23, 42, 0.04);
   border: none;
   font-size: 20px;
-  color: #6b7280;
+  color: #64748b;
   cursor: pointer;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,13 +52,13 @@
 }
 
 .auth-modal-close:hover {
-  background: rgba(255, 71, 87, 0.1);
-  color: #ff4757;
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
   transform: scale(1.05);
 }
 
 .auth-modal-content {
-  padding: 48px 40px 40px 40px;
+  padding: 56px 48px 48px 48px;
   overflow-y: auto;
   max-height: 90vh;
 }
@@ -131,9 +131,9 @@
 
 .form-group input:focus {
   outline: none;
-  border-color: #ff4757;
+  border-color: #2563eb;
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.08);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
   transform: translateY(-1px);
 }
 
@@ -208,8 +208,8 @@
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark {
-  background: #ff4757;
-  border-color: #ff4757;
+  background: #2563eb;
+  border-color: #2563eb;
   transform: scale(1.05);
 }
 
@@ -231,19 +231,19 @@
 }
 
 .form-checkboxes a {
-  color: #ff4757;
+  color: #2563eb;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.2s ease;
 }
 
 .form-checkboxes a:hover {
-  color: #ff3742;
+  color: #1d4ed8;
   text-decoration: underline;
 }
 
 .forgot-password {
-  color: #ff4757;
+  color: #2563eb;
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
@@ -251,17 +251,17 @@
 }
 
 .forgot-password:hover {
-  color: #ff3742;
+  color: #1d4ed8;
   text-decoration: underline;
 }
 
 /* Submit Button */
 .auth-submit-btn {
-  background: linear-gradient(135deg, #ff4757 0%, #ff3742 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: white;
   border: none;
-  padding: 18px 24px;
-  border-radius: 12px;
+  padding: 20px 28px;
+  border-radius: 16px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -269,23 +269,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-height: 56px;
-  letter-spacing: 0.2px;
+  gap: 12px;
+  min-height: 60px;
+  letter-spacing: 0.3px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
 }
 
 .auth-submit-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: 
-    0 20px 25px -5px rgba(255, 71, 87, 0.25),
-    0 10px 10px -5px rgba(255, 71, 87, 0.15);
-  background: linear-gradient(135deg, #ff3742 0%, #e73c4e 100%);
+    0 20px 25px rgba(37, 99, 235, 0.25),
+    0 10px 10px rgba(37, 99, 235, 0.15);
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
 }
 
 .auth-submit-btn:active:not(:disabled) {
-  transform: translateY(0);
+  transform: translateY(-1px);
 }
 
 .auth-submit-btn:disabled {
