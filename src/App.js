@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Trust from './components/Trust';
 import Features from './components/Features';
 import UseCases from './components/UseCases';
 import HowItWorks from './components/HowItWorks';
@@ -295,7 +294,6 @@ function App() {
     <div className="App">
       <Header />
       <Hero />
-      <Trust />
       <Features />
       <UseCases />
       <HowItWorks />

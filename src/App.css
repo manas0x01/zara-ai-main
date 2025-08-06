@@ -1466,43 +1466,6 @@ nav:hover .nav-content::before {
     color: var(--primary-color);
 }
 
-/* Trust Indicators */
-.trust-section {
-    padding: 80px 0;
-    background: var(--card-bg);
-    border-top: 1px solid var(--border-color);
-    text-align: center;
-}
-
-.trust-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-}
-
-.trust-item {
-    padding: 2rem;
-}
-
-.trust-number {
-    font-size: 3.2rem;
-    font-weight: 800;
-    background: var(--tertiary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: block;
-    margin-bottom: 1rem;
-}
-
-.trust-label {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-}
-
 /* Enhanced Features */
 .features {
     padding: 120px 0;
