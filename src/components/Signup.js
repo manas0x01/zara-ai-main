@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import apiService from '../services/api';
 
-const Signup = ({ onSwitchToLogin, onClose }) => {
+const Signup = ({ onSwitchToLogin, onClose, onSuccess }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -91,8 +91,26 @@ const Signup = ({ onSwitchToLogin, onClose }) => {
         subscribeNewsletter: formData.subscribeNewsletter
       });
 
-      alert(`Account created successfully! Please check your email (${formData.email}) to verify your account.`);
-      onClose();
+      // Automatically log in the user after successful registration
+      try {
+        const loginResult = await apiService.login({
+          email: formData.email,
+          password: formData.password
+        });
+
+        // If we have the onSuccess callback, call it with user data
+        if (onSuccess && loginResult.data && loginResult.data.user) {
+          onSuccess(loginResult.data.user);
+        } else {
+          alert(`Account created successfully! Please check your email (${formData.email}) to verify your account.`);
+          onClose();
+        }
+      } catch (loginError) {
+        // If auto-login fails, still show success message
+        console.log('Auto-login failed:', loginError);
+        alert(`Account created successfully! Please check your email (${formData.email}) to verify your account.`);
+        onClose();
+      }
     } catch (err) {
       if (err.message.includes('validation')) {
         // This could be expanded to handle specific validation errors

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import apiService from '../services/api';
 
-const Login = ({ onSwitchToSignup, onClose }) => {
+const Login = ({ onSwitchToSignup, onClose, onSuccess }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -32,12 +32,15 @@ const Login = ({ onSwitchToSignup, onClose }) => {
         rememberMe: formData.rememberMe
       });
 
-      alert(`Welcome back, ${response.data.user.firstName}!`);
-      
-      // Trigger a page refresh to update the UI with user data
-      window.location.reload();
-      
-      onClose();
+      // If we have the onSuccess callback, call it with user data
+      if (onSuccess && response.data && response.data.user) {
+        onSuccess(response.data.user);
+      } else {
+        alert(`Welcome back, ${response.data.user.firstName}!`);
+        // Trigger a page refresh to update the UI with user data
+        window.location.reload();
+        onClose();
+      }
     } catch (err) {
       setError(err.message || 'Login failed. Please try again.');
     } finally {

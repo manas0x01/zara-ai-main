@@ -79,7 +79,7 @@ const Header = () => {
                   aria-expanded={showUserMenu}
                   aria-haspopup="true"
                 >
-                  <span>{user.firstName ? `${user.firstName} ${user.lastName}` : user.email}</span>
+                  <span>{user.name || user.email}</span>
                   <i className={`fas fa-chevron-${showUserMenu ? 'up' : 'down'}`}></i>
                 </button>
                 {showUserMenu && (
@@ -141,7 +141,7 @@ const Header = () => {
             {user ? (
               <div className="mobile-user-menu">
                 <div className="mobile-user-info">
-                  <span>{user.firstName ? `${user.firstName} ${user.lastName}` : user.email}</span>
+                  <span>{user.name || user.email}</span>
                 </div>
                 <button className="mobile-logout-btn" onClick={handleLogout}>
                   <i className="fas fa-sign-out-alt"></i> Logout

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Login from './Login';
 import Signup from './Signup';
 
-const AuthModal = ({ isOpen, onClose, initialMode = 'login' }) => {
+const AuthModal = ({ isOpen, onClose, initialMode = 'login', onSuccess }) => {
   const [mode, setMode] = useState(initialMode);
 
   if (!isOpen) return null;
@@ -25,11 +25,13 @@ const AuthModal = ({ isOpen, onClose, initialMode = 'login' }) => {
             <Login 
               onSwitchToSignup={() => setMode('signup')} 
               onClose={onClose}
+              onSuccess={onSuccess}
             />
           ) : (
             <Signup 
               onSwitchToLogin={() => setMode('login')} 
               onClose={onClose}
+              onSuccess={onSuccess}
             />
           )}
         </div>

@@ -2,19 +2,13 @@ const nodemailer = require('nodemailer');
 
 // Create email transporter
 const createTransporter = () => {
-  if (process.env.NODE_ENV === 'development') {
-    // For development, you can use Ethereal Email for testing
-    return nodemailer.createTransporter({
-      host: 'smtp.ethereal.email',
-      port: 587,
-      auth: {
-        user: 'ethereal.user@ethereal.email',
-        pass: 'ethereal.pass'
-      }
-    });
+  // Check if we have valid email credentials
+  if (!process.env.EMAIL_USERNAME || !process.env.EMAIL_PASSWORD || process.env.EMAIL_PASSWORD === 'your-app-password') {
+    console.log('⚠️  Email credentials not configured - emails will not be sent');
+    return null;
   }
 
-  // For production, use your email service
+  // Use configured email service
   return nodemailer.createTransporter({
     service: process.env.EMAIL_SERVICE,
     auth: {
@@ -27,6 +21,13 @@ const createTransporter = () => {
 // Send email verification
 const sendVerificationEmail = async (user, verificationToken) => {
   const transporter = createTransporter();
+  
+  // If no transporter (email not configured), skip sending email
+  if (!transporter) {
+    console.log(`📧 Email verification would be sent to: ${user.email}`);
+    console.log(`🔗 Verification URL: ${process.env.CLIENT_URL}/verify-email?token=${verificationToken}`);
+    return { success: true, messageId: 'email-not-configured' };
+  }
   
   const verificationUrl = `${process.env.CLIENT_URL}/verify-email?token=${verificationToken}`;
 

@@ -42,8 +42,12 @@ router.post('/register', validateRegister, handleValidationErrors, async (req, r
 
     // Send verification email
     try {
-      await sendVerificationEmail(user, verificationToken);
+      const emailResult = await sendVerificationEmail(user, verificationToken);
+      if (emailResult.messageId === 'email-not-configured') {
+        console.log('⚠️  Email service not configured - user account created but email verification skipped');
+      }
     } catch (error) {
+      console.error('Email send error:', error);
       // Reset verification token if email fails
       user.emailVerificationToken = undefined;
       user.emailVerificationExpire = undefined;
