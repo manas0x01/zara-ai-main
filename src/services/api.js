@@ -60,28 +60,91 @@ class ApiService {
 
   // Authentication methods
   async register(userData) {
-    const response = await this.makeRequest('/auth/register', {
-      method: 'POST',
-      body: JSON.stringify(userData)
-    });
+    try {
+      const response = await this.makeRequest('/auth/register', {
+        method: 'POST',
+        body: JSON.stringify(userData)
+      });
+      return response;
+    } catch (error) {
+      // Demo mode: If server is not available, simulate successful registration
+      if (error.message.includes('Unable to connect to server')) {
+        console.warn('Backend server not available. Running in demo mode.');
+        
+        // Simulate a successful registration response
+        const demoResponse = {
+          success: true,
+          message: 'Registration successful! (Demo Mode - Backend not connected)',
+          data: {
+            user: {
+              id: 'demo_' + Date.now(),
+              email: userData.email,
+              fullName: userData.fullName,
+              createdAt: new Date().toISOString()
+            },
+            accessToken: 'demo_token_' + Date.now(),
+            refreshToken: 'demo_refresh_' + Date.now()
+          }
+        };
 
-    return response;
+        // Store demo tokens
+        localStorage.setItem('accessToken', demoResponse.data.accessToken);
+        localStorage.setItem('refreshToken', demoResponse.data.refreshToken);
+        localStorage.setItem('user', JSON.stringify(demoResponse.data.user));
+        localStorage.setItem('demo_mode', 'true');
+
+        return demoResponse;
+      }
+      throw error;
+    }
   }
 
   async login(credentials) {
-    const response = await this.makeRequest('/auth/login', {
-      method: 'POST',
-      body: JSON.stringify(credentials)
-    });
+    try {
+      const response = await this.makeRequest('/auth/login', {
+        method: 'POST',
+        body: JSON.stringify(credentials)
+      });
 
-    if (response.success) {
-      // Store tokens and user data
-      localStorage.setItem('accessToken', response.data.accessToken);
-      localStorage.setItem('refreshToken', response.data.refreshToken);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
+      if (response.success) {
+        // Store tokens and user data
+        localStorage.setItem('accessToken', response.data.accessToken);
+        localStorage.setItem('refreshToken', response.data.refreshToken);
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+      }
+
+      return response;
+    } catch (error) {
+      // Demo mode: If server is not available, simulate login
+      if (error.message.includes('Unable to connect to server')) {
+        console.warn('Backend server not available. Running in demo mode.');
+        
+        // Simulate successful login
+        const demoResponse = {
+          success: true,
+          message: 'Login successful! (Demo Mode - Backend not connected)',
+          data: {
+            user: {
+              id: 'demo_user',
+              email: credentials.email,
+              fullName: 'Demo User',
+              createdAt: new Date().toISOString()
+            },
+            accessToken: 'demo_token_' + Date.now(),
+            refreshToken: 'demo_refresh_' + Date.now()
+          }
+        };
+
+        // Store demo tokens
+        localStorage.setItem('accessToken', demoResponse.data.accessToken);
+        localStorage.setItem('refreshToken', demoResponse.data.refreshToken);
+        localStorage.setItem('user', JSON.stringify(demoResponse.data.user));
+        localStorage.setItem('demo_mode', 'true');
+
+        return demoResponse;
+      }
+      throw error;
     }
-
-    return response;
   }
 
   async refreshToken() {

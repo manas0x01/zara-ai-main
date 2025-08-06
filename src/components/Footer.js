@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 Zara AI. All rights reserved. Built with ❤️ for the future of AI interaction.</p>
+          <p>&copy; 2025 Zara AI. All rights reserved. Built with ❤️ for the future of AI interaction.</p>
         </div>
       </div>
     </footer>
