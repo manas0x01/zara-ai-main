@@ -43,6 +43,18 @@ const Testimonials = () => {
               </div>
             </div>
           </div>
+          <div className="testimonial-card">
+            <div className="testimonial-text">
+              As a content creator, Myra AI has become my secret weapon. From brainstorming video concepts to optimizing scripts, it understands creative flow and helps me produce better content faster than ever before.
+            </div>
+            <div className="testimonial-author">
+              <div className="author-avatar">MC</div>
+              <div className="author-info">
+                <h4>Marcus Chen</h4>
+                <p>Content Creator & Digital Marketer</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

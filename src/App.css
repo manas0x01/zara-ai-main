@@ -1393,9 +1393,13 @@ nav:hover .nav-content::before {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 2.5rem;
     margin-top: 4rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Professional Feature Cards with White Background */
@@ -1568,12 +1572,6 @@ nav:hover .nav-content::before {
     margin-right: auto;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
-}
-
 .feature-card {
     background: var(--card-bg);
     padding: 3rem;
@@ -1647,9 +1645,13 @@ nav:hover .nav-content::before {
 
 .use-cases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 2.5rem;
     margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .use-case-card {
@@ -2134,11 +2136,15 @@ nav:hover .nav-content::before {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 3rem;
     margin-top: 5rem;
     position: relative;
     z-index: 2;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .testimonial-card {
@@ -2986,16 +2992,39 @@ footer::before {
     }
 
     .features-grid,
-    .use-cases-grid,
+    .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
     .testimonials-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
     }
 
     .feature-card,
     .use-case-card,
     .testimonial-card {
-        padding: 1.5rem 1rem;
+        padding: 1.2rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .feature-card h3,
+    .use-case-card h3,
+    .testimonial-card h4 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-card p,
+    .use-case-card p,
+    .testimonial-text {
+        font-size: 0.85rem;
+        line-height: 1.4;
     }
 
     .feature-icon {
@@ -3063,6 +3092,46 @@ footer::before {
     .signup-btn {
         padding: 0.5rem 0.75rem;
         font-size: 0.8rem;
+    }
+
+    /* Maintain 2x2 grid on tablet */
+    .features-grid,
+    .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 800px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 800px;
+    }
+
+    .feature-card,
+    .use-case-card,
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Tablet Landscape Optimizations */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .features-grid,
+    .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 900px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 900px;
     }
 }
 
@@ -3182,16 +3251,18 @@ pre, code {
     }
     
     .features-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         gap: 2rem;
     }
-    
+
     .feature-card {
         padding: 2.5rem 2rem;
     }
     
     .testimonials-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         gap: 2rem;
     }
     
@@ -3378,14 +3449,16 @@ pre, code {
     .use-cases-grid {
         margin-top: 1.5rem;
         gap: 1rem;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         padding: 0 1rem;
     }
     
     .testimonials-grid {
         margin-top: 1.5rem;
         gap: 1rem;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         padding: 0 1rem;
     }
     
