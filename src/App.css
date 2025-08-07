@@ -7,6 +7,46 @@
     box-sizing: border-box;
 }
 
+/* Ensure no bottom gaps - Complete Fix */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Set proper height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Main app container should not have extra height */
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent scroll past content */
+}
+
+/* All content except footer should grow */
+.app-content {
+    flex: 1;
+}
+
+/* Prevent any bottom spacing */
+body > *:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Force footer to bottom and prevent overflow */
+footer {
+    flex-shrink: 0;
+}
+
+/* Remove any extra spacing after footer */
+footer::after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+
 /* Scroll Performance Optimizations */
 html {
     -webkit-scroll-behavior: smooth;
@@ -146,7 +186,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
-    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Full height */
+    /* min-height: 100vh; - Removed to eliminate bottom gap */
 }
 
 /* World-Class Professional Background Pattern */
@@ -2296,10 +2339,12 @@ nav:hover .nav-content::before {
 /* World-Class Professional Footer */
 footer {
     background: var(--bg-tertiary);
-    padding: 80px 0 40px;
+    padding: 80px 0 0; /* Completely remove bottom padding */
     position: relative;
     overflow: hidden;
     border-top: 1px solid var(--border-secondary);
+    margin-bottom: 0; /* Ensure no bottom margin */
+    margin-top: auto; /* Push footer to bottom */
 }
 
 footer::before {
@@ -2386,12 +2431,13 @@ footer::before {
 
 .footer-bottom {
     text-align: center;
-    padding-top: 3rem;
+    padding: 3rem 0 1rem 0; /* Add small bottom padding */
     border-top: 1px solid var(--border-secondary);
     color: var(--text-light);
     font-size: 0.9rem;
     position: relative;
     z-index: 2;
+    margin-bottom: 0; /* Ensure no bottom margin */
 }
 
 .social-links {
@@ -3397,7 +3443,7 @@ pre, code {
     }
     
     footer {
-        padding: 60px 0 30px;
+        padding: 60px 0 0; /* Remove bottom padding */
     }
     
     .section-subtitle {
@@ -3438,7 +3484,7 @@ pre, code {
     }
     
     footer {
-        padding: 30px 0 20px;
+        padding: 30px 0 0; /* Remove bottom padding */
     }
     
     .section-subtitle {
